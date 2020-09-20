@@ -30,8 +30,8 @@ RUN \
     python$PYTHON_VER-dev python3-pip && \
     echo 'alias python=python3' >> ~/.bash_aliases && \
     echo 'alias pip=pip3' >> ~/.bash_aliases && \
-    pip install -v --no-cache-dir --upgrade pip && \
-    pip install -v --no-cache-dir numpy && \
+    pip3 install -v --no-cache-dir --upgrade pip && \
+    pip3 install -v --no-cache-dir numpy && \
     # Install cuDNN
     cd /tmp && \
     wget -c http://developer.download.nvidia.com/compute/redist/cudnn/v8.0.3/cudnn-$CUDA_VER-linux-x64-v8.0.3.33.tgz -O - | tar -xz && \

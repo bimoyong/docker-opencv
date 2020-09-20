@@ -23,8 +23,8 @@ RUN \
     # Then we add two more libraries needed for OpenCV mathematical optimization: Fortran and Atlas.
     libatlas-base-dev gfortran && \
     # And finally, as mentioned above, we will rely on the version of Python 3.x. So if it is not yet installed on your system, the time has come to do it.
-    pip install -v --no-cache-dir --upgrade pip && \
-    pip install -v --no-cache-dir numpy && \
+    pip3 install -v --no-cache-dir --upgrade pip && \
+    pip3 install -v --no-cache-dir numpy && \
     # Download OpenCV source
     cd /tmp && \
     wget -c https://github.com/opencv/opencv/archive/$OPENCV_VER.tar.gz -O - | tar -xz && \
