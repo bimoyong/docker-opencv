@@ -9,6 +9,7 @@ IMAGE_TAG=${OPENCV_VER}-python${PYTHON_VER}-${OS}
 docker_cuda:
 	docker build \
 		--file cuda.Dockerfile \
+		--build-arg OWNER=${OWNER} \
 		--build-arg CUDA_VER=${CUDA_VER} \
 		--build-arg OPENCV_VER=${OPENCV_VER} \
 		--build-arg PYTHON_VER=${PYTHON_VER} \
@@ -36,6 +37,7 @@ docker_multiarch_cuda:
 		--file multiarch-cuda.Dockerfile \
 		--push \
 		--platform linux/arm,linux/arm64,linux/amd64 \
+		--build-arg OWNER=${OWNER} \
 		--build-arg CUDA_VER=${CUDA_VER} \
 		--build-arg OPENCV_VER=${OPENCV_VER} \
 		--build-arg PYTHON_VER=${PYTHON_VER} \
