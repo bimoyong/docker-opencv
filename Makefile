@@ -1,4 +1,4 @@
-OWNER=bimoyong
+OWNER=brazn
 IMAGE_NAME=${OWNER}/opencv-cuda
 CUDA_VER=10.1
 OPENCV_VER=4.4.0
@@ -44,4 +44,4 @@ docker_multiarch_cuda:
 		--tag ${IMAGE_NAME}:latest .
 
 
-.PHONY: docker docker_multiarch
+.PHONY: docker docker_multiarch docker_multiarch_cuda
