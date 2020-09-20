@@ -1,4 +1,4 @@
-OWNER=brazn
+OWNER=bimoyong
 IMAGE_NAME=${OWNER}/opencv-cuda
 CUDA_VER=10.1
 OPENCV_VER=4.4.0
