@@ -34,7 +34,16 @@ RUN \
     # Configure
     mkdir -vp /tmp/opencv/build && \
     cd /tmp/opencv/build && \
-    /tmp/script/cmake_$TARGETARCH.sh && \
+    cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D ENABLE_FAST_MATH=1 \
+    -D HAVE_opencv_python3=ON \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=/tmp/opencv_contrib/modules \
+    -D PYTHON_EXECUTABLE=$(which python3) \
+    -D BUILD_EXAMPLES=ON .. && \
     # Build
     make -j $(($(nproc) / 2 + 1)) && \
     make install && \
