@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY script /tmp/script
 
 RUN \
-    # Make sure that our Ubuntu system is perfectly updated
+    # Make sure that system is perfectly updated
     apt update -y && apt upgrade -y && \
     apt install -y --no-install-recommends \
     # There are a series of I / O libraries necessary for OpenCV 4 to manage the image and video formats.
